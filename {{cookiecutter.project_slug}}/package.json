@@ -19,6 +19,13 @@
         "url": "https://github.com/{{ cookiecutter.github_path }}/issues"
     },
     "homepage": "https://github.com/{{ cookiecutter.github_path }}#readme",
+    "dependencies": {
+        "vue": "^3.4.21",
+        "vue-router": "^4.3.0"
+        {% if cookiecutter.with_vuex == 'yes' %}
+        ,"vuex": "^4.1.0"
+        {% endif %}
+    },
     "devDependencies": {
         "typescript": "^5.4.4"
     }

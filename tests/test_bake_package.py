@@ -23,3 +23,8 @@ def test_bake_package_json(cookies: Cookies):
     assert package_json['license'] == context['license_id']
     assert package_json['bugs']['url'] == f'https://github.com/{context["github_path"]}/issues'
     assert package_json['homepage'] == f'https://github.com/{context["github_path"]}#readme'
+
+    if context['with_vuex'] == 'yes':
+        assert 'vuex' in package_json['dependencies']
+    else:
+        assert 'vuex' not in package_json['dependencies']

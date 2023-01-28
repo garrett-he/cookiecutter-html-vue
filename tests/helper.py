@@ -26,5 +26,6 @@ def generate_cookiecutter_context() -> dict:
         'license_id': chance.pickone(list(LICENSE_SPEC.keys())),
         'license_fullname': f'{chance.name()} <{chance.email()}>',
         'license_year': str(random.randint(2000, 2023)),
-        'github_path': f'{chance.word()}/{chance.word()}-{chance.word()}'.lower()
+        'github_path': f'{chance.word()}/{chance.word()}-{chance.word()}'.lower(),
+        'with_vuex': chance.pickone(['yes', 'no']),
     }
