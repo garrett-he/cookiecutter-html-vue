@@ -27,6 +27,8 @@
         {% endif %}
     },
     "devDependencies": {
-        "typescript": "^5.4.4"
+        "@vitejs/plugin-vue": "^5.0.4",
+        "typescript": "^5.4.4",
+        "vite": "^5.2.8"
     }
 }
