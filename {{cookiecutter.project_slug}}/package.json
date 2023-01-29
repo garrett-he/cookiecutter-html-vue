@@ -4,6 +4,8 @@
     "description": "{{ cookiecutter.project_description }}",
     "private": {{ cookiecutter.project_private }},
     "scripts": {
+        "build": "vite build",
+        "dev": "vite --host",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {

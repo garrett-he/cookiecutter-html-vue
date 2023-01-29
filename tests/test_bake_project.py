@@ -1,4 +1,5 @@
 from pytest_cookies.plugin import Cookies
+from .helper import generate_cookiecutter_context
 
 
 def test_create_project(cookies: Cookies):
@@ -6,3 +7,19 @@ def test_create_project(cookies: Cookies):
     assert not result.exception
 
     assert result.project_path.joinpath('.editorconfig').exists()
+
+
+def test_bake_vuex(cookies: Cookies):
+    context = generate_cookiecutter_context()
+
+    context['with_vuex'] = 'yes'
+    result = cookies.bake(extra_context=context)
+    assert not result.exception
+
+    assert result.project_path.joinpath('src/store/index.ts').exists()
+
+    context['with_vuex'] = 'no'
+    result = cookies.bake(extra_context=context)
+    assert not result.exception
+
+    assert not result.project_path.joinpath('src/store').exists()
