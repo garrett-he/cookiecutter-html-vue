@@ -6,8 +6,9 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite --host",
-        "lint": "npm run lint:eslint",
+        "lint": "npm run lint:eslint && npm run lint:stylelint",
         "lint:eslint": "eslint . --ext .ts",
+        "lint:stylelint": "stylelint ./src/**/*.{vue,css}",
         "test": "vitest --run"
     },
     "repository": {
@@ -31,12 +32,16 @@
         {% endif %}
     },
     "devDependencies": {
+        "@stylistic/stylelint-plugin": "^3.1.1",
         "@typescript-eslint/eslint-plugin": "^7.6.0",
         "@typescript-eslint/parser": "^7.6.0",
         "@vitejs/plugin-vue": "^5.0.4",
         "@vue/test-utils": "^2.4.5",
         "eslint": "^8.56.0",
         "jsdom": "^24.0.0",
+        "stylelint": "^16.3.1",
+        "stylelint-config-recommended-vue": "^1.5.0",
+        "stylelint-config-standard": "^36.0.0",
         "typescript": "^5.4.4",
         "vite": "^5.2.8",
         "vitest": "^1.5.0"

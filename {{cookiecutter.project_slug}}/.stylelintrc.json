@@ -1,0 +1,12 @@
+{
+    "plugins": [
+        "@stylistic/stylelint-plugin"
+    ],
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recommended-vue"
+    ],
+    "rules": {
+        "@stylistic/indentation": 4
+    }
+}
