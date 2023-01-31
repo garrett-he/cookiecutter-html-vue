@@ -6,9 +6,10 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite --host",
-        "lint": "npm run lint:eslint && npm run lint:stylelint",
+        "lint": "npm run lint:eslint && npm run lint:stylelint && npm run lint:markdownlint",
         "lint:eslint": "eslint . --ext .ts",
         "lint:stylelint": "stylelint ./src/**/*.{vue,css}",
+        "lint:markdownlint": "markdownlint *.md",
         "test": "vitest --run"
     },
     "repository": {
@@ -39,6 +40,7 @@
         "@vue/test-utils": "^2.4.5",
         "eslint": "^8.56.0",
         "jsdom": "^24.0.0",
+        "markdownlint-cli": "^0.39.0",
         "stylelint": "^16.3.1",
         "stylelint-config-recommended-vue": "^1.5.0",
         "stylelint-config-standard": "^36.0.0",
