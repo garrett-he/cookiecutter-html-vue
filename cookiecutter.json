@@ -23,6 +23,7 @@
     "license_year": "{% now 'utc', '%Y' %}",
     "github_path": "{{ cookiecutter.author_name.lower() | slugify }}/{{ cookiecutter.project_slug }}",
     "node_version": "20.12.2",
+    "docker_port": "8080",
     "with_vuex": [
         "yes",
         "no"

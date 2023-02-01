@@ -1,0 +1,11 @@
+---
+version: "3"
+services:
+  web:
+    image: "{{ cookiecutter.project_slug }}"
+    build:
+      context: .
+      args:
+        NODE_VERSION: "{{ cookiecutter.node_version }}"
+    ports:
+      - "{{ cookiecutter.docker_port }}:80"
