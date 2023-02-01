@@ -23,3 +23,12 @@ def test_bake_vuex(cookies: Cookies):
     assert not result.exception
 
     assert not result.project_path.joinpath('src/store').exists()
+
+
+def test_bake_nvmrc(cookies: Cookies):
+    context = generate_cookiecutter_context()
+
+    result = cookies.bake(extra_context=context)
+    assert not result.exception
+
+    assert result.project_path.joinpath('.nvmrc').read_text(encoding='utf-8').strip() == context['node_version']

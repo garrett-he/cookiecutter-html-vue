@@ -28,4 +28,5 @@ def generate_cookiecutter_context() -> dict:
         'license_year': str(random.randint(2000, 2023)),
         'github_path': f'{chance.word()}/{chance.word()}-{chance.word()}'.lower(),
         'with_vuex': chance.pickone(['yes', 'no']),
+        'node_version': f'{random.randint(0, 10)}.{random.randint(0, 10)}.{random.randint(0, 10)}',
     }
