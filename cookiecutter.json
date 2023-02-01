@@ -27,5 +27,8 @@
     "with_vuex": [
         "yes",
         "no"
+    ],
+    "_copy_without_render": [
+        ".github/*"
     ]
 }
