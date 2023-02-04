@@ -1,5 +1,8 @@
 # cookiecutter-html-vue
 
+![License](https://img.shields.io/github/license/garrett-he/cookiecutter-html-vue)
+![GitHub Workflow](https://img.shields.io/github/actions/workflow/status/garrett-he/cookiecutter-html-vue/ubuntu-jammy.yml)
+
 A Cookiecutter template for HTML with Vue.js framework.
 
 ## Quickstart
