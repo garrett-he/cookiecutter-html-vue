@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "cookiecutter-html-vue"
+version = "0.1.0"
+description = "A Cookiecutter template for HTML with Vue.js framework."
+authors = ["Garrett HE <garrett.he@hotmail.com>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+homepage = "https://github.com/garrett-he/cookiecutter-html-vue"
+repository = "https://github.com/garrett-he/cookiecutter-html-vue.git"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.group.dev.dependencies]
+chance = "^0.110"
+pytest = "^7.4.0"
+pytest-cookies = "^0.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
