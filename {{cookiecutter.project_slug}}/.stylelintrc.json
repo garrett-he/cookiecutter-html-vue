@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "stylelint-stylus/standard"
+    ],
+    "rules": {
+        "stylus/indentation": 4
+    }
+}
