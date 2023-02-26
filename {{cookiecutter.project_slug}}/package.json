@@ -41,6 +41,7 @@
         "@vue/test-utils": "^2.3.2",
     {% endif %}
         "eslint": "^8.27.0",
+        "husky": "^8.0.1",
         "jsdom": "^22.1.0",
         "markdownlint-cli": "^0.32.2",
         "stylelint": "^14.16.1",
