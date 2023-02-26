@@ -42,6 +42,7 @@
     {% endif %}
         "eslint": "^8.27.0",
         "jsdom": "^22.1.0",
+        "markdownlint-cli": "^0.32.2",
         "stylelint": "^14.16.1",
         "stylelint-stylus": "^0.17.1",
         "stylus": "^0.59.0",
