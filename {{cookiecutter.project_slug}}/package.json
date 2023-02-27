@@ -4,7 +4,14 @@
     "description": "{{ cookiecutter.project_description }}",
     "private": {{ cookiecutter.project_private }},
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "vite build",
+        "dev": "vite --host",
+        "lint": "npm run lint:eslint && npm run lint:markdownlint && npm run lint:stylelint",
+        "lint:eslint": "eslint . --ext .ts",
+        "lint:markdownlint": "markdownlint *.md",
+        "lint:stylelint": "stylelint ./src/**/*.{vue,css,styl}",
+        "prepare": "husky install",
+        "test": "vitest --run"
     },
     "repository": {
         "type": "git",
