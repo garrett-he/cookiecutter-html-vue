@@ -27,5 +27,4 @@ MIT License, see [LICENSE](./LICENSE).
 {%- elif cookiecutter.license_id == 'MPL-2.0' %}
 
 Mozilla Public License 2.0, see [LICENSE](./LICENSE).
-{%- endif %}
-{% endif %}
+{%- endif %}{% endif %}

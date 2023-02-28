@@ -6,3 +6,5 @@ services:
       context: .
       args:
         NODE_VERSION: {{ cookiecutter.node_version }}
+    ports:
+      - "{{ cookiecutter.docker_port }}:80"
