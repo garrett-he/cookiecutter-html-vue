@@ -30,5 +30,9 @@
     "with_vuex": [
         "yes",
         "no"
+    ],
+    "with_docker": [
+        "yes",
+        "no"
     ]
 }
