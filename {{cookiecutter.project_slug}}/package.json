@@ -18,5 +18,8 @@
     "bugs": {
         "url": "https://github.com/{{ cookiecutter.github_path }}/issues"
     },
-    "homepage": "https://github.com/{{ cookiecutter.github_path }}#readme"
+    "homepage": "https://github.com/{{ cookiecutter.github_path }}#readme",
+    "devDependencies": {
+        "typescript": "^5.4.4"
+    }
 }
