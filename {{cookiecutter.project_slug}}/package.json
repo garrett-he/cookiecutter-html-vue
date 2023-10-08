@@ -1,0 +1,22 @@
+{
+    "name": "{{ cookiecutter.project_slug }}",
+    "version": "{{ cookiecutter.project_version }}",
+    "description": "{{ cookiecutter.project_description }}",
+    "private": {{ cookiecutter.project_private }},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/{{ cookiecutter.github_path }}.git"
+    },
+    "keywords": [
+        "{{ cookiecutter.project_keywords.split(',')|join('",\n"') }}"
+    ],
+    "author": "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>",
+    "license": "{{ cookiecutter.license_id }}",
+    "bugs": {
+        "url": "https://github.com/{{ cookiecutter.github_path }}/issues"
+    },
+    "homepage": "https://github.com/{{ cookiecutter.github_path }}#readme"
+}
