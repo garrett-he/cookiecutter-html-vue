@@ -35,7 +35,8 @@ def generate_context() -> dict:
         'license_id': chance.pickone([key for key in license_stubs.keys()]),
         'license_fullname': f'{chance.name()} <{chance.email()}>',
         'license_year': str(random.randint(2000, 2023)),
-        'github_path': f'{chance.word()}/{chance.word()}-{chance.word()}'.lower()
+        'github_path': f'{chance.word()}/{chance.word()}-{chance.word()}'.lower(),
+        'with_vuex': chance.pickone(['yes', 'no']),
     }
 
 
@@ -101,3 +102,8 @@ def test_bake_package_json(cookies: Cookies):
     assert package_json['license'] == context['license_id']
     assert package_json['bugs']['url'] == f'https://github.com/{context["github_path"]}/issues'
     assert package_json['homepage'] == f'https://github.com/{context["github_path"]}#readme'
+
+    if context['with_vuex'] == 'yes':
+        assert 'vuex' in package_json['dependencies']
+    else:
+        assert 'vuex' not in package_json['dependencies']
