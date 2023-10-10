@@ -4,6 +4,8 @@
     "description": "{{ cookiecutter.project_description }}",
     "private": {{ cookiecutter.project_private }},
     "scripts": {
+        "build": "vite build",
+        "dev": "vite --host",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -21,8 +23,8 @@
     "homepage": "https://github.com/{{ cookiecutter.github_path }}#readme",
     "dependencies": {
         "vue": "^3.4.21",
-        "vue-router": "^4.3.0",
-        {% if cookiecutter.with_vuex == 'yes' %}
+        "vue-router": "^4.3.0"
+        {% if cookiecutter.with_vuex == 'yes' %},
         "vuex": "^4.1.0"
         {% endif %}
     },

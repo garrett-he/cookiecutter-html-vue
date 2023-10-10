@@ -107,3 +107,19 @@ def test_bake_package_json(cookies: Cookies):
         assert 'vuex' in package_json['dependencies']
     else:
         assert 'vuex' not in package_json['dependencies']
+
+
+def test_bake_vuex(cookies: Cookies):
+    context = generate_context()
+
+    context['with_vuex'] = 'yes'
+    result = cookies.bake(extra_context=context)
+    assert not result.exception
+
+    assert result.project_path.joinpath('src/store/index.ts').exists()
+
+    context['with_vuex'] = 'no'
+    result = cookies.bake(extra_context=context)
+    assert not result.exception
+
+    assert not result.project_path.joinpath('src/store').exists()
