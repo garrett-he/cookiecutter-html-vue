@@ -37,6 +37,7 @@ def generate_context() -> dict:
         'license_year': str(random.randint(2000, 2023)),
         'github_path': f'{chance.word()}/{chance.word()}-{chance.word()}'.lower(),
         'with_vuex': chance.pickone(['yes', 'no']),
+        'node_version': f'{random.randint(0, 10)}.{random.randint(0, 10)}.{random.randint(0, 10)}',
     }
 
 
@@ -123,3 +124,12 @@ def test_bake_vuex(cookies: Cookies):
     assert not result.exception
 
     assert not result.project_path.joinpath('src/store').exists()
+
+
+def test_bake_nvmrc(cookies: Cookies):
+    context = generate_context()
+
+    result = cookies.bake(extra_context=context)
+    assert not result.exception
+
+    assert result.project_path.joinpath('.nvmrc').read_text(encoding='utf-8').strip() == context['node_version']
