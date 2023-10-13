@@ -2,6 +2,7 @@ import json
 import random
 from glob import glob
 
+import yaml
 from chance import chance
 from pytest_cookies.plugin import Cookies
 
@@ -37,6 +38,7 @@ def generate_context() -> dict:
         'license_year': str(random.randint(2000, 2023)),
         'github_path': f'{chance.word()}/{chance.word()}-{chance.word()}'.lower(),
         'with_vuex': chance.pickone(['yes', 'no']),
+        'docker_port': str(random.randint(1025, 65535)),
         'node_version': f'{random.randint(0, 10)}.{random.randint(0, 10)}.{random.randint(0, 10)}',
     }
 
@@ -133,3 +135,16 @@ def test_bake_nvmrc(cookies: Cookies):
     assert not result.exception
 
     assert result.project_path.joinpath('.nvmrc').read_text(encoding='utf-8').strip() == context['node_version']
+
+
+def test_bake_docker_compose(cookies: Cookies):
+    context = generate_context()
+    result = cookies.bake(extra_context=context)
+    assert not result.exception
+
+    with result.project_path.joinpath('docker-compose.yml').open('r', encoding='utf-8') as fp:
+        docker_compose = yaml.load(fp, Loader=yaml.Loader)
+
+    assert docker_compose['services']['web']['image'] == context['project_slug']
+    assert docker_compose['services']['web']['build']['args']['NODE_VERSION'] == context['node_version']
+    assert docker_compose['services']['web']['ports'][0] == f"{context['docker_port']}:80"
